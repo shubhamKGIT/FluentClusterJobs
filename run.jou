@@ -1,0 +1,25 @@
+; Start transcript
+/file/start-transcript fluent_run.trn
+
+; Read existing case and data
+/file/read-case-data sbli_ready.cas.h5
+
+; Optional: check mesh/case
+/mesh/check
+
+; Optional: set autosave
+/file/auto-save/data-frequency 500
+/file/auto-save/root-name autosave/sbli
+
+; Run steady iterations
+/solve/iterate 5000
+
+; Write final case and data
+/file/write-case-data sbli_final.cas.h5
+
+; Stop transcript
+/file/stop-transcript
+
+; Exit Fluent
+/exit
+yes
